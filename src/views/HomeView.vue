@@ -1,9 +1,11 @@
 <script setup>
-import TheWelcome from "@/components/TheWelcome.vue";
+import LoginForm from "@/components/LoginForm.vue";
+import CatComponent from "@/components/CatComponent.vue";
 </script>
 
 <template>
   <main>
-    <TheWelcome />
+    <LoginForm />
+    <CatComponent />
   </main>
 </template>
