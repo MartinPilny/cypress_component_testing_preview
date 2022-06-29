@@ -18,6 +18,7 @@
   <div v-if="cat">
     <img
       data-test-id="image-cat"
+      alt="Cat image"
       :src="'https://cataas.com' + cat.url"
     />
     <br />
