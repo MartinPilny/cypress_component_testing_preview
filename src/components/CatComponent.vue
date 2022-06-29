@@ -1,17 +1,28 @@
 <template>
   <h2>Cat</h2>
-  <button @click="fetchData('cute')">Show me a cute cat!</button>
-  <button @click="fetchData('sleepy')">Show me a sleepy cat!</button>
-  <button @click="fetchData('angry')">Show me a angry cat!</button>
-  <button @click="fetchData()">Show me a random cat!</button>
+  <button data-test-id="button-fetch-cute-cat" @click="fetchData('cute')">
+    Show me a cute cat!
+  </button>
+  <button data-test-id="button-fetch-sleepy-cat" @click="fetchData('sleepy')">
+    Show me a sleepy cat!
+  </button>
+  <button data-test-id="button-fetch-angry-cat" @click="fetchData('angry')">
+    Show me a angry cat!
+  </button>
+  <button data-test-id="button-fetch-random-cat" @click="fetchData()">
+    Show me a random cat!
+  </button>
   <br />
-  <span v-if="loading">loading...</span>
+  <span data-test-id="span-loading" v-if="loading">loading...</span>
   <br />
   <div v-if="cat">
-    <img :src="'https://cataas.com' + cat.url" />
+    <img
+      data-test-id="image-cat"
+      :src="'https://cataas.com' + cat.url"
+    />
     <br />
     <span>Tags:</span>
-    <ul>
+    <ul data-test-id="list-tags">
       <li v-for="(tag, i) in cat.tags" :key="i">{{ tag }}</li>
     </ul>
   </div>
