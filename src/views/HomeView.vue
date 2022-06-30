@@ -1,11 +1,11 @@
 <script setup>
-import LoginForm from "@/components/LoginForm.vue";
+import RegistrationForm from "@/components/RegistrationForm.vue";
 import CatComponent from "@/components/CatComponent.vue";
 </script>
 
 <template>
   <main>
-    <LoginForm />
+    <RegistrationForm />
     <CatComponent />
   </main>
 </template>
