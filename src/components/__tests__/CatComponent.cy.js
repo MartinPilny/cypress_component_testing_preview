@@ -60,9 +60,8 @@ describe("CatComponent", () => {
   });
 
   it("Loading is displayed if waiting for response", () => {
-    const catType = catTypes[0];
     cy.mount(CatComponent);
-    cy.intercept(getUrl(catType), (req) => {
+    cy.intercept(getUrl(), (req) => {
       req.on("response", (res) => {
         // Throttle the response to 1 Mbps to simulate a
         // mobile 3G connection
