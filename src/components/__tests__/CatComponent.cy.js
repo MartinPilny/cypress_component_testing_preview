@@ -42,13 +42,12 @@ describe("CatComponent", () => {
 
   it("Tags are displayed if returned", () => {
     const tags = ["tag_1", "tag_2", "tag_3"];
-    cy.mount(CatComponent);
-    cy.intercept(getUrl(), {
-      id: "xyz",
-      created_at: "2022-05-01T22:35:01.037Z",
+    const mockResponse = {
       tags: tags,
       url: "/cat",
-    }).as(`catInterception`);
+    };
+    cy.mount(CatComponent);
+    cy.intercept(getUrl(), mockResponse).as(`catInterception`);
     cy.get(locators.showMeCatButton()).click();
     cy.get(locators.tagsList)
       .should("be.visible")
